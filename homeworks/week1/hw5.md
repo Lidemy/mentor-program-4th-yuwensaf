@@ -55,7 +55,7 @@ Database 都不會只有一台，
 10. 瀏覽器發送 request 到 172.217.160.78
 11. Google server 收到 request 後，去 database 查詢關鍵字，並取得搜尋結果
 12. Google server 將搜尋結果回傳一個 response 給瀏覽器
-13. 瀏覽器將結果解析後顯示在畫面上，就是我看到的搜尋結果了
+13. 瀏覽器將 response 解析後顯示在畫面上，就是我所看到的搜尋結果了
 
 
 
