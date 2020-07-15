@@ -1,4 +1,5 @@
 /* eslint-disable no-plusplus */
+/* eslint-disable no-use-before-define */
 // const readline = require('readline');
 
 // const rl = readline.createInterface({
@@ -14,7 +15,6 @@
 
 // // 輸入結束，開始針對 lines 做處理
 // rl.on('close', () => {
-//   // eslint-disable-next-line
 //   solve(lines);
 // });
 
@@ -24,4 +24,4 @@ function solve(lines) {
 }
 
 
-solve([1]);
+solve([]);
