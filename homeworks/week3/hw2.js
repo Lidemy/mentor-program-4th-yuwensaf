@@ -32,21 +32,21 @@ function solve(lines) {
 }
 
 // 回傳數字是幾位數
-function digits(number) {
+function digitsCount(number) {
   let n = number;
   // 如果 n 是 0 的話，就直接回傳「是 1 位數」
   if (n === 0) return 1;
-  let digitsCount = 0;
+  let result = 0;
   while (n !== 0) {
     n = Math.floor(n / 10);
-    digitsCount++;
+    result++;
   }
-  return digitsCount;
+  return result;
 }
 
 function isNarcissistic(number) {
   let n = number;
-  const d = digits(n);
+  const d = digitsCount(n);
   let sum = 0;
   while (n !== 0) {
     // eslint-disable-next-line
