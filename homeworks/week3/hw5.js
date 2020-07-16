@@ -44,7 +44,7 @@ function compare(a, b, k) {
   }
 
   // 假設都是比大
-  // 如果 a, b 的長度不同，就是「長度比較多的贏」
+  // 如果 a, b 的長度不同，就是「長度比較長的贏」
   if (a.length !== b.length) {
     return a.length > b.length ? 'A' : 'B';
   }
