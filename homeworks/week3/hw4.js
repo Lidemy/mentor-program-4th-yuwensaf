@@ -32,8 +32,3 @@ function isPalindrome(str) {
   }
   return str === reverseStr;
 }
-
-
-solve([
-  'abbbbac',
-]);

@@ -21,13 +21,10 @@ rl.on('close', () => {
 // 上面都不用管，只需要完成這個 function 就好，可以透過 lines[i] 拿取內容
 // eslint-disable-next-line
 function solve(lines) {
-  const n = lines[0];
+  const n = Number(lines[0]);
   let star = '*';
   for (let i = 1; i <= n; i++) {
     console.log(star);
     star += '*';
   }
 }
-
-
-solve([1]);

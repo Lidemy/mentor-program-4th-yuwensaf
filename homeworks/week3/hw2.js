@@ -31,16 +31,28 @@ function solve(lines) {
   }
 }
 
-function isNarcissistic(number) {
-  const str = JSON.stringify(number);
-  const digits = str.length;
-  let sum = 0;
-  for (let i = 0; i < digits; i++) {
-    // eslint-disable-next-line
-    sum += Math.pow(Number(str[i]), digits);
+// 回傳數字是幾位數
+function digits(number) {
+  let n = number;
+  // 如果 n 是 0 的話，就直接回傳「是 1 位數」
+  if (n === 0) return 1;
+  let digitsCount = 0;
+  while (n !== 0) {
+    n = Math.floor(n / 10);
+    digitsCount++;
   }
-  return sum === number;
+  return digitsCount;
 }
 
+function isNarcissistic(number) {
+  let n = number;
+  const d = digits(n);
+  let sum = 0;
+  while (n !== 0) {
+    // eslint-disable-next-line
+    sum += Math.pow(n % 10, d);
+    n = Math.floor(n / 10);
+  }
 
-solve(['5 200']);
+  return sum === number;
+}
