@@ -9,12 +9,14 @@ API 有分為好幾種，例如：
 * 透過作業系統提供的 File API，我可以操控檔案
 * 透過網頁傳遞資料的就叫做 Web API
 
-API 的網址會由兩個部分組成：
+如果是有遵循 RESTful 設計風格的 API，則 API 的網址會由兩個部分組成：
 * 第一個部分是 Base URL，例如 https://api.twitch.tv/kraken
 * 第二個部分是「不同的 path」，例如 /videos/top
 API 會提供很多不同的資源，例如「取得頻道有多少個粉絲、取得擁有最多觀看數的影片」等等，就會用不同的 path 去區分
 
 `Base URL + path` 才會是 API 的完整網址，例如 https://api.twitch.tv/kraken/videos/top 就是「Get Top Videos」的 API 網址
+
+RESTful 是比較理想的 API 設計，但如果有別的設計考量，也有可能都是從統一一個 path 但是不同的 POST body 來區分不同資源。
 
 ## 請找出三個課程沒教的 HTTP status code 並簡單介紹
 

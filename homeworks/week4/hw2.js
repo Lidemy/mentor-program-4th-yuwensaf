@@ -3,9 +3,12 @@ const request = require('request');
 const process = require('process');
 
 const apiEndpoint = 'https://lidemy-book-store.herokuapp.com/books';
+const action = process.argv[2];
+const bookInfo = process.argv[3];
+const bookNewName = process.argv[4];
 
 // 印出前二十本書的 id 與書名
-if (process.argv[2] === 'list') {
+if (action === 'list') {
   request(`${apiEndpoint}?_limit=20`,
     (error, response, body) => {
       let obj;
@@ -22,8 +25,8 @@ if (process.argv[2] === 'list') {
 }
 
 // 輸出 id 為 xx 的書籍
-if (process.argv[2] === 'read') {
-  request(`${apiEndpoint}/${process.argv[3]}`,
+if (action === 'read') {
+  request(`${apiEndpoint}/${bookInfo}`,
     (error, response, body) => {
       let obj;
       try {
@@ -37,22 +40,22 @@ if (process.argv[2] === 'read') {
 }
 
 // 刪除 id 為 xx 的書籍
-if (process.argv[2] === 'delete') {
-  request.delete(`${apiEndpoint}/${process.argv[3]}`);
+if (action === 'delete') {
+  request.delete(`${apiEndpoint}/${bookInfo}`);
 }
 
 // 新增一本名為 xxxxx 的書
-if (process.argv[2] === 'create') {
+if (action === 'create') {
   request.post(
     `${apiEndpoint}`,
-    { form: { name: `${process.argv[3]}` } },
+    { form: { name: `${bookInfo}` } },
   );
 }
 
 // 更新 id 為 xx 的書名為 ooooo
-if (process.argv[2] === 'update') {
+if (action === 'update') {
   request.patch(
-    `${apiEndpoint}/${process.argv[3]}`,
-    { form: { name: `${process.argv[4]}` } },
+    `${apiEndpoint}/${bookInfo}`,
+    { form: { name: `${bookNewName}` } },
   );
 }

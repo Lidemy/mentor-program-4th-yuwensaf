@@ -1,8 +1,14 @@
 /* eslint-disable no-plusplus */
+/* eslint-disable consistent-return */
 const request = require('request');
 
-request('https://lidemy-book-store.herokuapp.com/books?_limit=10',
+const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com';
+
+request(`${API_ENDPOINT}/books?_limit=10`,
   (error, response, body) => {
+    if (error) {
+      return console.log('抓取失敗', error);
+    }
     let obj;
     try {
       obj = JSON.parse(body);
