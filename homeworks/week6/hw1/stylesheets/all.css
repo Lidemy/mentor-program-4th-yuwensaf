@@ -1,0 +1,336 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  font-family: Questrial, "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 84px;
+}
+
+.logo-text {
+  display: block;
+  font-size: 2.25rem;
+  color: #489846;
+  margin-top: 26px;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.menu-item {
+  display: block;
+  font-size: 1.125rem;
+  color: #010101;
+  width: 120px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-item:hover {
+  color: #fefefe;
+  background-color: #ff7286;
+}
+
+.banner {
+  height: 580px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../img/2.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/2.png);
+  background-position: center center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 80px;
+}
+
+.banner .banner-text {
+  color: #ffffff;
+  font-size: 3.75rem;
+}
+
+.index-title {
+  font-size: 2.25rem;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 39px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.index-title::before {
+  content: "";
+  width: 15px;
+  height: 38px;
+  background-color: #a3dea2;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -32px;
+}
+
+.section-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intro {
+  margin-bottom: 121px;
+}
+
+.intro-text {
+  color: #000000;
+  font-size: 1rem;
+}
+
+.intro-text:nth-child(2), .intro-text:nth-child(3) {
+  margin-bottom: 21px;
+}
+
+.index-ordering {
+  margin-top: 84px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.order-button {
+  display: block;
+  width: 300px;
+  height: 160px;
+  font-size: 2.25rem;
+  letter-spacing: 0.32px;
+  color: #3e613d;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 160px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.order-button:nth-child(1) {
+  background-color: #a8e8e1;
+  margin-right: 11.5px;
+}
+
+.order-button:nth-child(1):hover {
+  background-color: #97d0ca;
+}
+
+.order-button:nth-child(2) {
+  background-color: #f9f9b5;
+  margin-left: 11.5px;
+}
+
+.order-button:nth-child(2):hover {
+  background-color: #e2e2a5;
+}
+
+.food-menu {
+  margin-bottom: 82px;
+}
+
+.food-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.review {
+  margin-bottom: 90px;
+}
+
+.review-title {
+  margin-bottom: 98px;
+}
+
+.review-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.review-list-item {
+  width: 33%;
+  border: 1px solid #c7e5ec;
+  border-radius: 5px;
+  padding-bottom: 39px;
+}
+
+.reviewer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -54px;
+  margin-bottom: 23px;
+}
+
+.reviewer .reviewer-photo {
+  width: 105px;
+  height: 105px;
+  margin-bottom: 5px;
+}
+
+.review-content {
+  margin: 0 24px;
+  text-align: center;
+  letter-spacing: 0.14px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.map {
+  margin-bottom: 43px;
+}
+
+.map .google-map {
+  width: 100%;
+}
+
+.footer {
+  padding-top: 44px;
+  background-color: #e8efee;
+}
+
+.footer .footer-text {
+  color: #484848;
+  font-size: 0.875rem;
+}
+
+.footer .footer-text:nth-child(1), .footer .footer-text:nth-child(2), .footer .footer-text:nth-child(3) {
+  margin-bottom: 16px;
+}
+
+.footer .footer-text:nth-child(4) {
+  margin-bottom: 39px;
+}
+
+.footer .email-link {
+  text-decoration: none;
+}
+
+.footer .copyright {
+  background-color: #35564b;
+  padding: 15px 0;
+}
+
+.footer .copyright-text {
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
+}
+/*# sourceMappingURL=all.css.map */
