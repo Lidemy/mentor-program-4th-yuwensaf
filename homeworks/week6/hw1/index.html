@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
   <link rel="stylesheet" href="stylesheets/all.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial">
@@ -21,7 +21,16 @@
         <li><a href="#" class="menu-item">查詢訂單</a></li>
         <li><a href="#" class="menu-item">常見問題</a></li>
       </ul>
+
+      <a class="ham-icon"></a>
     </section>
+    <!-- dropdown-menu -->
+    <ul class="dropdown-menu">
+      <li><a href="#" class="dropdown-menu-item">抽個大獎</a></li>
+      <li><a href="#" class="dropdown-menu-item">我要點餐</a></li>
+      <li><a href="#" class="dropdown-menu-item">查詢訂單</a></li>
+      <li><a href="#" class="dropdown-menu-item">常見問題</a></li>
+    </ul>
 
     <!-- banner -->
     <header class="banner">
@@ -84,8 +93,8 @@
       <h3 class="index-title">我們在哪裡</h3>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3615.0027469618335!2d121.56235021440442!3d25.033980844447473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1597153918110!5m2!1szh-TW!2stw"
-        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-        tabindex="0" class="google-map">
+        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"
+        class="google-map">
       </iframe>
     </section>
 
@@ -93,7 +102,9 @@
     <footer class="footer">
       <div class="container">
         <p class="footer-text">餐館地址: 天上地下天堂路三分之一里六段520號</p>
-        <p class="footer-text">訂位專線：02-1314-5566</p>
+        <p class="footer-text">訂位專線：
+          <a href="tel:02-1314-5566" class="tel-link">02-1314-5566</a>
+          </p>
         <p class="footer-text">營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</p>
         <p class="footer-text">email：
           <a href="mailto:service@justabite.com.tw" target="_blank" class="email-link">service@justabite.com.tw</a>
@@ -114,6 +125,8 @@
 
 
 
+
+  <script src="js/all.js"></script>
 
 
 
