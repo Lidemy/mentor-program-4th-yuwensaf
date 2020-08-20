@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, mininum-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/all.css">
+  <title>SS 新拖延運動報名表單</title>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="form-wrapper">
+      <div class="top-border"></div>
+      <div class="form-content">
+        <div class="header">
+          <h1 class="event-title">新拖延運動報名表單</h1>
+          <p class="header-info">活動日期：2020/12/10 ~ 2020/12/11</p>
+          <p class="header-info">活動地點：台北市大安區新生南路二段1號</p>
+          <p class="required">*必填</p>
+        </div>
+        <form action="index.html" class="register-form">
+          <label for="name" class="label-text">暱稱<span class="label-star"> *</span></label>
+          <input type="text" id="name" placeholder="您的回答" class="input-box" required>
+  
+          <label for="email" class="label-text">電子郵件<span class="label-star"> *</span></label>
+          <input type="email" id="email" placeholder="您的電子郵件" class="input-box" required>
+  
+          <label for="phone" class="label-text">手機號碼<span class="label-star"> *</span></label>
+          <input type="tel" id="phone" placeholder="您的手機號碼" class="input-box" required>
+  
+          <label class="label-text">報名類型<span class="label-star"> *</span></label>
+          <div class="type">
+            <input id="lieInBed" type="radio" name="register-type" value="躺在床上用想像力實作" required>
+            <label for="lieInBed">躺在床上用想像力實作</label>
+          </div>
+          <div class="type">
+            <input id="lieOnFloor" type="radio" name="register-type" value="趴在地上滑手機找現成的" required>
+            <label for="lieOnFloor">趴在地上滑手機找現成的</label>
+          </div>
+  
+          <label for="resource" class="label-text">怎麼知道這個活動的？<span class="label-star"> *</span></label>
+          <input type="text" id="resource" placeholder="您的回答" class="input-box" required>
+  
+          <label for="other" class="label-text other-label">其他</label>
+          <p class="other-info">對活動的一些建議</p>
+          <input type="text" id="other" placeholder="您的回答" class="input-box" required>
+  
+          <input type="submit" value="提交" class="submit-button">
+        </form>
+        <p class="other-info">請勿透過表單送出您的密碼。</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="footer-text">&copy; 2020 &copy; Copyright. All rights Reserved.</p>
+    </footer>
+  
+  
+  
+  
+  
+  
+  </div>
+
+</body>
+</html>
