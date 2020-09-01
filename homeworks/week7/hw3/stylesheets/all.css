@@ -1,0 +1,146 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  max-width: 768px;
+  background-color: #a2d5f2;
+  margin: 50px auto 0 auto;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner {
+  position: relative;
+  height: 200px;
+}
+
+.date-bg {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: #ffc93c;
+  position: absolute;
+  top: -50px;
+  left: -40px;
+}
+
+.date {
+  font-size: 55px;
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.date-block {
+  position: absolute;
+  top: 73px;
+  left: 72px;
+}
+
+.add-todo-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add-todo {
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  font-size: 24px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid #07689f;
+  padding: 10px;
+  outline: none;
+}
+
+.add-todo:focus {
+  border: 2px solid #07689f;
+  border-radius: 5px;
+}
+
+.todo-block {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-item-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+}
+/*# sourceMappingURL=all.css.map */

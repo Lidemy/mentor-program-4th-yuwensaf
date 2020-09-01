@@ -1,0 +1,85 @@
+$accent: #ffc93c;
+$secondary: #07689f;
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper{
+  max-width: 768px;
+  background-color: #a2d5f2;
+  margin: 50px auto 0 auto;
+  height: 500px; // 最後要刪掉
+  overflow: hidden;
+}
+.banner{
+  position: relative;
+  height: 200px;
+}
+.date-bg{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: $accent;
+  position: absolute;
+  top: -50px;
+  left: -40px;
+}
+.date{
+  font-size: 55px;
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+}
+.date-block{
+  position: absolute;
+  top: 73px;;
+  left: 72px;
+}
+.add-todo-block{
+  display: flex;
+  justify-content: center;
+}
+.add-todo{
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  font-size: 24px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid $secondary;
+  padding: 10px;
+  outline: none;
+}
+.add-todo:focus{
+  border: 2px solid $secondary;
+  border-radius: 5px;
+}
+
+.todo-block{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.todo-item{
+  display: flex;
+}
+.todo-item-check{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+}
+
+
+
+
+
+
+
+
