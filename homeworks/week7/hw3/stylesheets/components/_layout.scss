@@ -1,4 +1,4 @@
-$accent: #ffc93c;
+$accent: #fbd46d;
 $secondary: #07689f;
 
 *, *::before, *::after{
@@ -8,19 +8,26 @@ img{
   max-width: 100%;
   height: auto;
 }
+body{
+  font-family: 'Courier New';
+}
+input::placeholder{
+  font-family: 'Courier New';
+}
 
 .wrapper{
   max-width: 768px;
   background-color: #a2d5f2;
   margin: 50px auto 0 auto;
-  height: 500px; // 最後要刪掉
+  min-height: 400px;
   overflow: hidden;
+  padding-bottom: 30px;
 }
 .banner{
   position: relative;
   height: 200px;
 }
-.date-bg{
+.today-bg{
   width: 220px;
   height: 220px;
   border-radius: 50%;
@@ -29,13 +36,13 @@ img{
   top: -50px;
   left: -40px;
 }
-.date{
+.today{
   font-size: 55px;
   text-align: center;
   font-family: monospace;
   font-weight: bold;
 }
-.date-block{
+.today-block{
   position: absolute;
   top: 73px;;
   left: 72px;
@@ -48,13 +55,11 @@ img{
   background-color: transparent;
   border: none;
   width: 80%;
-  font-size: 24px;
-  border-top: 2px solid transparent;
-  border-right: 2px solid transparent;
-  border-left: 2px solid transparent;
-  border-bottom: 2px solid $secondary;
+  font-size: 18px;
   padding: 10px;
   outline: none;
+  border: 2px solid #07689f1f;
+  border-radius: 5px;
 }
 .add-todo:focus{
   border: 2px solid $secondary;
@@ -68,15 +73,67 @@ img{
 }
 .todo-item{
   display: flex;
+  position: relative;
+  padding: 12px 9px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  &:hover{
+    background-color: #c6e2f3;
+  }
+}
+.todo-item.item-done:hover{
+  background-color: transparent;
 }
 .todo-item-check{
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 2px solid #000000;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.todo-item.item-done .todo-item-check{
+  background-color: $accent;
 }
 
-
+.todo-item.item-done .todo-item-check::before{
+  content: "\2713";
+  font-size: 25px;
+  font-family: Arial;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.todo-item-content{
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  padding: 0 10px;
+}
+.todo-item.item-done .todo-item-content::before{
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.todo-item-delete::before{
+  content: '\2718';
+  font-size: 25px;
+  font-family: Arial;
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 
 
 

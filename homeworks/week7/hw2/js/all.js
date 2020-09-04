@@ -1,7 +1,8 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
-/* eslint-disable  */
+/* eslint-disable prefer-template */
+/* eslint-disable quotes */
 // nav 的漢堡選單
 const hamIcon = document.querySelector('.ham-icon');
 const dropdownMenu = document.querySelector('.dropdown-menu');
