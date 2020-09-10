@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-plusplus */
 /* eslint-disable arrow-body-style */
+/* eslint-disable no-restricted-syntax */
 const today = new Date();
 const date = today.getDate();
 const options = { month: 'short' };
@@ -22,44 +23,36 @@ const refreshPage = () => {
   // 更新左上角的日期
   document.querySelector('.date').innerText = date;
   document.querySelector('.month').innerText = month;
-  // 先 render 出「未完成的 to-do」
-  const getNotFinished = window.localStorage.getItem('todoNotFinished');
-  if (getNotFinished) {
-    const notFinishedParse = JSON.parse(getNotFinished);
-    const notFinishedArray = Object.values(notFinishedParse);
-    const notFinishedLength = notFinishedArray.length;
-    for (let i = 0; i < notFinishedLength; i++) {
-      const notFinishedValue = notFinishedArray[i];
-      const liNotFinished = document.createElement('li');
-      liNotFinished.classList.add('todo-item');
-      liNotFinished.setAttribute('data-content', notFinishedValue);
-      liNotFinished.innerHTML = `
-      <div class="todo-item-check"></div>
-      <div class="todo-item-content">${escapeHtml(notFinishedValue)}</div>
-      <div class="todo-item-delete"></div>
-  `;
-      ul.appendChild(liNotFinished);
-    }
-  }
 
-  // 然後再 render 出「已完成的 to-do」
-  const getFinished = window.localStorage.getItem('todoFinished');
-  if (getFinished) {
-    const getFinishedParse = JSON.parse(getFinished);
-    const finishedArray = Object.values(getFinishedParse);
-    const finishedLength = finishedArray.length;
-    for (let i = 0; i < finishedLength; i++) {
-      const finishedValue = finishedArray[i];
-      const liFinished = document.createElement('li');
-      liFinished.classList.add('todo-item');
-      liFinished.classList.add('item-done');
-      liFinished.setAttribute('data-content', finishedValue);
-      liFinished.innerHTML = `
+  const getDataTodos = JSON.parse(window.localStorage.getItem('dataTodoString'));
+  if (getDataTodos) {
+    const dataTodosArr = Object.values(getDataTodos); // 先把物件的 value 轉為陣列，才能用 for 迴圈取得陣列中的每個元素
+    for (const dataTodo of dataTodosArr) {
+      // 先 render 出「未完成的 to-do」
+      if (!dataTodo.isDone) {
+        const notDoneValue = dataTodo.value;
+        const liNotDone = document.createElement('li');
+        liNotDone.classList.add('todo-item');
+        liNotDone.setAttribute('data-content', notDoneValue);
+        liNotDone.innerHTML = `
       <div class="todo-item-check"></div>
-      <div class="todo-item-content">${escapeHtml(finishedValue)}</div>
+      <div class="todo-item-content">${escapeHtml(notDoneValue)}</div>
       <div class="todo-item-delete"></div>
   `;
-      ul.appendChild(liFinished);
+        ul.appendChild(liNotDone);
+      } else { // 然後再 render 出「已完成的 to-do」
+        const doneValue = dataTodo.value;
+        const liDone = document.createElement('li');
+        liDone.classList.add('todo-item');
+        liDone.classList.add('item-done');
+        liDone.setAttribute('data-content', doneValue);
+        liDone.innerHTML = `
+      <div class="todo-item-check"></div>
+      <div class="todo-item-content">${escapeHtml(doneValue)}</div>
+      <div class="todo-item-delete"></div>
+  `;
+        ul.appendChild(liDone);
+      }
     }
   }
 };
@@ -68,20 +61,18 @@ refreshPage();
 
 // 儲存到 local storage 裡面
 const setLocalStorage = () => {
-  const dataNotFinished = {}; // 儲存「未完成的 to-do」
-  const dataFinished = {}; // 儲存「已完成的 to-do」
+  const dataTodo = {}; // 儲存所有的 to-do
   const todoItems = document.querySelectorAll('.todo-item');
   for (let i = 0; i < todoItems.length; i++) {
     if (!todoItems[i].classList.contains('item-done')) { // 如果是「未完成的 to-do」
-      dataNotFinished[`${i}`] = todoItems[i].getAttribute('data-content');
+      dataTodo[i] = { value: todoItems[i].getAttribute('data-content'), isDone: false };
     } else { // 如果是「已完成的 to-do」
-      dataFinished[`${i}`] = todoItems[i].getAttribute('data-content');
+      dataTodo[i] = { value: todoItems[i].getAttribute('data-content'), isDone: true };
     }
   }
-  const dataNotFinishedString = JSON.stringify(dataNotFinished);
-  const dataFinishedString = JSON.stringify(dataFinished);
-  window.localStorage.setItem('todoNotFinished', dataNotFinishedString);
-  window.localStorage.setItem('todoFinished', dataFinishedString);
+
+  const dataTodoString = JSON.stringify(dataTodo);
+  window.localStorage.setItem('dataTodoString', dataTodoString);
 };
 
 // 把「已完成的 to-do」移到最下方
