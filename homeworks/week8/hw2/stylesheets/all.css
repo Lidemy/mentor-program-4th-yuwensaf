@@ -104,7 +104,7 @@ html, body {
   color: #ffffff;
 }
 
-.game-block {
+.streams-block {
   background-color: #738598;
   color: #ffffff;
   display: -webkit-box;
@@ -121,12 +121,12 @@ html, body {
   min-height: 100vw;
 }
 
-.game-block__title {
+.streams-block__title {
   font-size: 30px;
   margin-bottom: 30px;
 }
 
-.game-block__text {
+.streams-block__text {
   font-size: 20px;
   margin-bottom: 30px;
 }
@@ -163,7 +163,7 @@ html, body {
           box-shadow: 0px 2px 5px 4px rgba(0, 0, 0, 0.3);
 }
 
-.stream-banner {
+.stream-image {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -195,7 +195,7 @@ html, body {
   width: 76%;
 }
 
-.description {
+.status {
   margin-bottom: 10px;
   font-size: 18px;
   white-space: nowrap;

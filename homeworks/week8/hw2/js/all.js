@@ -8,11 +8,11 @@ const getStreamsApiUrl = 'https://api.twitch.tv/kraken/streams/';
 const CLIENT_ID = 'ovn0u5ph1z8z2gngt8si4nogad7znx';
 const STREAM_TEMPLATE = `
         <li class="streams-list__item">
-          <div class="stream-banner" style="background-image: url($banner)"></div>
+          <div class="stream-image" style="background-image: url($preview)"></div>
           <div class="stream-info">
             <div class="stream-info__logo" style="background-image: url($logo)"></div>
             <div class="stream-info__content">
-              <div class="description">$description</div>
+              <div class="status">$status</div>
               <div class="name">$name</div>
             </div>
           </div>
@@ -52,12 +52,12 @@ getGames(function (games) {
     li.innerText = game.game.name;
     document.querySelector('.games-list').appendChild(li);
   }
-  // 當重新整理頁面時，就顯示第一個遊戲的實況
+  // 當重新整理頁面時，就顯示第一個遊戲的名稱和實況
   changeGame(games[0].game.name);
 });
 
 // 負責顯示畫面（前 20 個實況）
-// 當我點擊其中一個遊戲時
+// 當我點擊 navbar 的其中一個遊戲時
 const navbar = document.querySelector('.games-list');
 navbar.addEventListener('click', (e) => {
   if (e.target.tagName.toLowerCase() === 'li') {
@@ -68,8 +68,8 @@ navbar.addEventListener('click', (e) => {
 });
 
 function changeGame(thisGame) {
-  document.querySelector('.game-block__title').innerText = thisGame; // 替換遊戲標題
-  document.querySelector('.streams-list').innerHTML = ''; // 先清空畫面
+  document.querySelector('.streams-block__title').innerText = thisGame; // 替換遊戲標題
+  document.querySelector('.streams-list').innerHTML = ''; // 先清空所有的實況
   getStreams(thisGame, cbStream);
 }
 
@@ -90,7 +90,7 @@ function getStreams(thisGame, cbStream) {
     console.log('Error!');
   };
 
-  request.open('GET', getStreamsApiUrl + `?game=${thisGame}&limit=20`, true);
+  request.open('GET', getStreamsApiUrl + `?game=${encodeURIComponent(thisGame)}&limit=20`, true);
 
   request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json');
   request.setRequestHeader('Client-ID', CLIENT_ID);
@@ -104,9 +104,9 @@ function cbStream(streamData) {
     document.querySelector('.streams-list').appendChild(li);
 
     li.outerHTML = STREAM_TEMPLATE
-      .replace('$banner', stream.channel.video_banner)
+      .replace('$preview', stream.preview.large)
       .replace('$logo', stream.channel.logo)
-      .replace('$description', stream.channel.description)
+      .replace('$status', stream.channel.status)
       .replace('$name', stream.channel.name);
   }
 }
