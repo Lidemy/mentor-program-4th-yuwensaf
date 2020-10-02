@@ -1,0 +1,231 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Courier New';
+}
+
+input::-webkit-input-placeholder {
+  font-family: 'Courier New';
+}
+
+input:-ms-input-placeholder {
+  font-family: 'Courier New';
+}
+
+input::-ms-input-placeholder {
+  font-family: 'Courier New';
+}
+
+input::placeholder {
+  font-family: 'Courier New';
+}
+
+.wrapper {
+  max-width: 768px;
+  background-color: #a2d5f2;
+  margin: 50px auto 0 auto;
+  min-height: 400px;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.banner {
+  position: relative;
+  height: 200px;
+}
+
+.today-bg {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: #fbd46d;
+  position: absolute;
+  top: -50px;
+  left: -40px;
+}
+
+.today {
+  font-size: 55px;
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.today-block {
+  position: absolute;
+  top: 73px;
+  left: 72px;
+}
+
+.add-todo-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add-todo {
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  font-size: 18px;
+  padding: 10px;
+  outline: none;
+  border: 2px solid #07689f1f;
+  border-radius: 5px;
+}
+
+.add-todo:focus {
+  border: 2px solid #07689f;
+  border-radius: 5px;
+}
+
+.todo-block {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 12px 9px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.todo-item:hover {
+  background-color: #c6e2f3;
+}
+
+.todo-item.item-done:hover {
+  background-color: transparent;
+}
+
+.todo-item-check {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.todo-item.item-done .todo-item-check {
+  background-color: #fbd46d;
+}
+
+.todo-item.item-done .todo-item-check::before {
+  content: "\2713";
+  font-size: 25px;
+  font-family: Arial;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.todo-item-content {
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0 10px;
+}
+
+.todo-item.item-done .todo-item-content::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.todo-item-delete::before {
+  content: '\2718';
+  font-size: 25px;
+  font-family: Arial;
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+}
+/*# sourceMappingURL=all.css.map */
