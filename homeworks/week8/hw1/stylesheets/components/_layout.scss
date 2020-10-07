@@ -1,0 +1,476 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+html, body {
+  font-family: Questrial, "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.navbar {
+  height: 84px;
+  position: relative
+}
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  @include pad {
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.logo-text {
+  display: inline-block;
+  font-size: 2.25rem;
+  color: #489846;
+}
+.menu {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  @include pad {
+    display: none;
+  }
+}
+.menu-item {
+  display: block;
+  font-size: 1.125rem;
+  color: #010101;
+  width: 120px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  &:hover {
+    color: #fefefe;
+    background-color: #ff7286;
+  }
+}
+.active {
+  color: #fefefe;
+  background-color: #ff7286;
+}
+.ham-icon {
+  display: none;
+  position: absolute;
+  top: 42%;
+  left: 0;
+  @include pad {
+    display: inline-block;
+    z-index: 2;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.ham-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 8px;
+  border-top: 2px solid #489846;
+  border-bottom: 2px solid #489846;
+  transition: all 0.5s;
+}
+.ham-icon::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 30px;
+  border-top: 2px solid #489846;
+  transition: all 0.5s;
+}
+.ham-icon.active::before {
+  border-bottom: none;
+  transform: rotate(45deg);
+}
+.ham-icon.active::after {
+  top: 1px;
+  transform: rotate(-45deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  padding: 100px 0px 70px;
+  left: -100%;
+  transition: all 0.5s;
+}
+.dropdown-menu.active {
+  left: 0;
+}
+.dropdown-menu-item {
+  display: block;
+  font-size: 1.125rem;
+  color: #010101;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  line-height: 44px;
+  margin: 0 auto;
+}
+
+.banner {
+  height: 580px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../img/2.png);
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  .banner-text {
+    color: #ffffff;
+    font-size: 3.75rem;
+  }
+}
+
+.index-title {
+  font-size: 2.25rem;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 39px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  &::before {
+    content: "";
+    width: 15px;
+    height: 38px;
+    background-color: #a3dea2;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -32px;
+  }
+  @include pad {
+    font-size: 2rem;
+  }
+}
+.section-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  margin-bottom: 121px;
+  padding: 0 10%;
+}
+.intro-text {
+  line-height: 1.5;
+  color: #000000;
+  font-size: 1rem;
+  text-align: center;
+  &:nth-child(2), &:nth-child(3) {
+    margin-bottom: 21px;
+  }
+}
+.index-ordering {
+  margin-top: 84px;
+  display: flex;
+  @include pad {
+    flex-direction: column;
+  }
+}
+.order-button {
+  display: block;
+  width: 300px;
+  height: 160px;
+  font-size: 2.25rem;
+  letter-spacing: 0.32px;
+  color: #3e613d;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 160px;
+  transition: all 0.5s;
+  &:nth-child(1) {
+    background-color: #a8e8e1;
+    margin-right: 11.5px;
+    @include pad {
+      margin-right: 0;
+      margin-bottom: 12px;
+    }
+  }
+  &:nth-child(1):hover {
+    background-color: #97d0ca;
+  }
+  &:nth-child(2) {
+    background-color: #f9f9b5;
+    margin-left: 11.5px;
+    @include pad {
+      margin-left: 0;
+    }
+  }
+  &:nth-child(2):hover {
+    background-color: #e2e2a5;
+  }
+}
+
+.food-menu {
+  margin-bottom: 82px;
+}
+.food-menu-list {
+  display: flex;
+  @include pad {
+    flex-direction: column;
+  }
+}
+
+.review {
+  margin-bottom: 90px;
+}
+.review-title {
+  margin-bottom: 98px;
+}
+.review-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include pad {   
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.review-list-item {
+  width: 33%;
+  border: 1px solid #c7e5ec;
+  border-radius: 5px;
+  padding-bottom: 39px;
+  @include pad {
+    width: 90%;
+  }
+}
+.review-list-item:nth-child(1), .review-list-item:nth-child(2) {
+  @include pad {
+    margin-bottom: 90px;
+  }
+}
+
+.reviewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -54px;
+  margin-bottom: 23px;
+  .reviewer-photo {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 5px;
+  }
+}
+.review-content {
+  margin: 0 24px;
+  text-align: center;
+  letter-spacing: 0.14px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.map {
+  margin-bottom: 43px;
+  .google-map {
+    width: 100%;
+  }
+}
+
+
+.footer {
+  padding-top: 44px;
+  background-color: #e8efee;
+  .footer-text {
+    color: #484848;
+    font-size: 0.875rem;
+    @include pad {
+      font-size: 0.8rem;
+    }
+  }
+  .footer-text:nth-child(1), .footer-text:nth-child(2), .footer-text:nth-child(3) {
+    margin-bottom: 16px;
+  }
+  .footer-text:nth-child(4) {
+    margin-bottom: 39px;
+  }
+  .tel-link, .email-link{
+    text-decoration: none;
+    color: #489846;
+  }
+  .copyright {
+    background-color: #35564b;
+    padding: 15px 20px;
+  }
+  .copyright-text {
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    @include pad {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// faq 頁面
+.faq{
+  margin: 75px 0 41px 0;
+}
+.question-block{
+  width: 42%;
+}
+.question-item{
+  border-bottom: 1px solid #a6e2c0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.toggle-height{
+  height: 80px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.question-number{
+  font-size: 24px;
+  letter-spacing: 0.22px;
+  color: #70b282;
+  padding: 29px 17px 28px 17px;
+}
+.question-text{
+  font-size: 18px;
+  letter-spacing: 0.16px;
+  color: #000000;
+  margin-left: 16px;
+}
+.answer{
+  letter-spacing: 0.14px;
+  font-size: 16px;
+  color: #000000;
+  line-height: 2;
+  margin: 0 0 30px 68px;
+}
+
+// lottery 頁面
+.lottery{
+  background-image: url(../../img/games-bn-sm.png);
+  padding: 55px 0 152px 0;
+  background-size: cover;
+  background-position: center center;
+  min-height: 70vh;
+}
+.lottery.first-prize{
+  background-image: url(../../img/flight-4315953_1920.jpg);
+}
+.lottery.second-prize{
+  background-image: url(../../img/living-room-1872192_1920.jpg);
+}
+.lottery.third-prize{
+  background-image: url(../../img/youtube-2617510_1920.jpg);
+}
+.lottery.none{
+  background-image: none;
+  background-color: #000000;
+  color: #ffffff;
+}
+.prize-result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  .prize-result__title{
+    font-size: 30px;
+    margin-bottom: 36px;
+    color: #ffffff;
+  }
+}
+.lottery-block{
+  max-width: 500px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 40px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lottery-info{
+  margin-bottom: 36px;
+}
+.lottery-info_item{
+  display: flex;
+  border-bottom: 1px dashed #cdcdcd;
+  padding: 0 35px 24px 0;
+}
+.lottery-info_item:not(:last-child){
+  margin-bottom: 18px;
+}
+.lottery-block_title{
+  color: #5ec1b6;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 42px;
+  text-align: center;
+}
+.lottery-title{
+  color: #322929;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 22px;
+  min-width: 95px;
+  line-height: 1.63;
+  @include pad{
+    margin-right: 0px;
+  }
+}
+.lottery-content{
+  color: #322929;
+  font-size: 16px;
+  line-height: 1.63;
+}
+.lottery-btn{
+  background-color: #e62a45;
+  color: #ffffff;
+  font-size: 20px;
+  width: 368px;
+  height: 55px;
+  border-radius: 8px;
+  margin: 0 auto;
+  border: none;
+  transition: all 0.3s;
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    cursor: pointer;
+    background-color: #dc6576;
+  }
+}
+.hide{
+  display: none;
+}
+
+
+
+
+
