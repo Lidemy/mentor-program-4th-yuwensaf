@@ -36,7 +36,9 @@
     <div class="warning">注意！本站為練習用網站，因教學用途刻意忽略資安的實作，註冊時請勿使用任何真實的帳號或密碼。</div>
     <div class="users-block">
       <h1>管理後台</h1>
+      <a class="go-back" href="index.php">回留言板</a>
       <h2>Hello, <?php echo $username ?></h2>
+      
       <?php
         if (!empty($_GET['errCode'])) {
           $code = $_GET['errCode'];
