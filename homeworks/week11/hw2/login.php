@@ -11,23 +11,7 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="wrapper navbar__wrapper">
-      <div class="navbar__site-name">
-        <a href='index.php'>Who's Blog</a>
-      </div>
-      <ul class="navbar__list">
-        <div>
-          <li><a href="#">文章列表</a></li>
-          <li><a href="#">分類專區</a></li>
-          <li><a href="#">關於我</a></li>
-        </div>
-        <div>
-          <li><a href="index.php">回首頁</a></li>
-        </div>
-      </ul>
-    </div>
-  </nav>
+  <?php include_once('navbar.php') ?>
   <section class="banner">
     <div class="banner__wrapper">
       <h1>存放技術之地</h1>

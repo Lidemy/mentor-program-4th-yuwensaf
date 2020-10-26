@@ -27,8 +27,10 @@
           <?php } else { ?>
             <li><a href="admin.php">管理後台</a></li>
           <?php } ?>
-        <?php } else { ?> <!-- 如果沒有登入的話 -->
-        <li><a href="login.php">登入</a></li>
+        <?php } else if (strpos($uri, 'login.php')) { ?> <!-- 如果沒有登入，且目前是在 login.php -->
+          <li><a href="index.php">回首頁</a></li>
+        <?php } else { ?> <!-- 如果沒有登入，且目前不是在 login.php -->
+          <li><a href="login.php">登入</a></li>
         <?php } ?>
       </div>
     </ul>
