@@ -53,7 +53,7 @@
     }
 
     if ($user && $user['role'] === '3') { // 如果身份是 banned
-      return ($action !== 'add' && $comment && $user['username'] === $comment['username']); // 不能新增留言，但是可以編輯與刪除自己的留言
+      return ($action === 'update' && $comment && $user['username'] === $comment['username']); // 不能新增留言，但是可以編輯與刪除自己的留言
     }
   }
 

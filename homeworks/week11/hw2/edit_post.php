@@ -20,7 +20,6 @@
 
   $result = $stmt->get_result();
   $row = $result->fetch_assoc();
-
 ?>
 
 <!DOCTYPE html>
@@ -40,20 +39,13 @@
   <section class="banner">
     <div class="banner__wrapper">
       <h1>編輯文章</h1>
+      <?php echo $_SERVER['HTTP_REFERER'] ?>
     </div>
   </section>
   <div class="container-wrapper">
     <div class="container">
       <div class="edit-post">
         <form action="handle_edit_post.php?id=<?php echo $id ?>" method="POST">
-        <?php
-          if (!empty($_GET['errCode'])) {
-            $code = $_GET['errCode'];
-            if ($code === '1') {
-              echo '<h3 class="errMsg">請輸入文章標題和內容！</h3>';
-            }
-          }
-        ?>
           <div class="edit-post__title">
             編輯文章：
           </div>

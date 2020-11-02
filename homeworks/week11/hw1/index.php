@@ -85,14 +85,20 @@
           <?php
             if (!empty($_GET['errCode'])) {
               $code = $_GET['errCode'];
-              if ($code === '1') {
-                echo '<h2 class="errMsg">請輸入留言！</h2>';
-              } else if ($code === '2') {
-                echo '<h2 class="errMsg">請輸入新的暱稱！</h2>';
-              } else if ($code === '3') {
-                echo '<h2 class="errMsg">非管理員不可進入後台！</h2>';
-              } else if ($code === '4') {
-                echo '<h2 class="errMsg">遭停權使用者不可留言！</h2>';
+
+              switch($code) {
+                case '1':
+                  echo '<h2 class="errMsg">請輸入留言！</h2>';
+                  break;
+                case '2':
+                  echo '<h2 class="errMsg">請輸入新的暱稱！</h2>';
+                  break;
+                case '3':
+                  echo '<h2 class="errMsg">非管理員不可進入後台！</h2>';
+                  break;
+                case '4':
+                  echo '<h2 class="errMsg">遭停權使用者不可留言！</h2>';
+                  break;
               }
             }
           ?>

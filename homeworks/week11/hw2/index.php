@@ -53,7 +53,7 @@
             <?php } ?>
           </div>
           <div class="post__info"><?php echo escape($row['created_at']) ?></div>
-          <div class="post__content"><?php echo substr(escape($row['content']), 0, 200) ?></div>
+          <div class="post__content"><?php echo substr(escape($row['content']), 0, 150) ?></div>
           <a class="btn-read-more" href="post.php?id=<?php echo $row['id'] ?>">READ MORE</a>
         </article>
       <?php } ?>
