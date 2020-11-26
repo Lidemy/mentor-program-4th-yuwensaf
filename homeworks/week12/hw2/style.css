@@ -60,7 +60,7 @@
 .input-edit-todo{
   height: 63.59px;
 }
-.finished{
+.finished .todo-content{
   color: rgb(199, 197, 197);
   text-decoration: line-through;
 }
