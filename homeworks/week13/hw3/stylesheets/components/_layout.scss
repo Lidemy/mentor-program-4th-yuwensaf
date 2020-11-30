@@ -1,0 +1,104 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px 15px;
+}
+.site-name{
+  font-size: 30px;
+}
+.games-list{
+  display: flex;
+}
+.games-list__item{
+  padding: 0 15px;
+  line-height: 30px;
+  transition: all 0.3s;
+  &:hover{
+    cursor: pointer;
+    background-color: #3c415e;
+    color: #ffffff;
+  }
+}
+.streams-block{
+  background-color: #738598;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  min-height: 100vw;
+}
+.streams-block__title{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.streams-block__text{
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.streams-list{
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.streams-list__item{
+  width: 30%;
+  height: 200px;
+  border: 1px solid #3c415e;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.7% 15px 0.7%;
+  transition: all 0.3s;
+  &:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 2px 5px 4px rgba(0,0,0,0.3);
+  }
+}
+.stream-image{
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.stream-info{
+  display: flex;
+  background-color: #3c415e;
+  padding: 8px;
+  height: 60px;
+}
+.stream-info__logo{
+  width: 50px;
+  height: 50px;
+  margin-right: 4%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.stream-info__content{
+  width: 76%;
+}
+.status{
+  margin-bottom: 10px;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.name{
+  font-size: 14px;
+}
