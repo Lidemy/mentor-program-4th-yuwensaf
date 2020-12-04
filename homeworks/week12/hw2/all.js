@@ -179,8 +179,8 @@ $(document).ready(() => {
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:8080/saffran/week12-todoList/api_save_todos.php',
-      // url: 'http://mentor-program.co/mtr04group4/saffran/week12-todo-list/api_save_todos.php',
+      // url: 'http://localhost:8080/saffran/week12-todoList/api_save_todos.php',
+      url: 'http://mentor-program.co/mtr04group4/saffran/week12-todo-list/api_save_todos.php',
       data: {
         todos: JSON.stringify(dataArr) // 把陣列先變成 JSON 字串
       }
@@ -200,8 +200,8 @@ $(document).ready(() => {
   if (todosId) {
     // 發送一個 GET request 去後端拿 todos 的資料，並且用 url (query string) 的方式帶上專屬的 id 送到 api 去
     $.ajax({
-      url: `http://localhost:8080/saffran/week12-todoList/api_get_todos.php?id=` + todosId
-      // url: `http://mentor-program.co/mtr04group4/saffran/week12-todo-list/api_get_todos.php?id=` + todosId
+      // url: `http://localhost:8080/saffran/week12-todoList/api_get_todos.php?id=` + todosId
+      url: `http://mentor-program.co/mtr04group4/saffran/week12-todo-list/api_get_todos.php?id=` + todosId
     }).done(function (res) {
       const data = JSON.parse(res.todos.todo_data); // 把 JSON 字串變回陣列
       restoreTodos(data);

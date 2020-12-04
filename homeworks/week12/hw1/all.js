@@ -60,8 +60,8 @@ $(document).ready(() => {
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:8080/saffran/week12-board_api/api_add_comments.php',
-      // url: 'http://mentor-program.co/mtr04group4/saffran/week12-comment-board/api_add_comments.php',
+      // url: 'http://localhost:8080/saffran/week12-board_api/api_add_comments.php',
+      url: 'http://mentor-program.co/mtr04group4/saffran/week12-comment-board/api_add_comments.php',
       data: newCommentData,
     }).done((data) => {
       // 如果沒有成功新增留言
@@ -79,8 +79,8 @@ $(document).ready(() => {
 
   // 串接「抓取留言的 api」（只負責拿資料，不處理畫面）
   function getCommentsAPI(siteKey, before, cb) {
-    let url = `http://localhost:8080/saffran/week12-board_api/api_comments.php?site_key=${siteKey}`;
-    // let url = `http://mentor-program.co/mtr04group4/saffran/week12-comment-board/api_comments.php?site_key=${siteKey}`;
+    // let url = `http://localhost:8080/saffran/week12-board_api/api_comments.php?site_key=${siteKey}`;
+    let url = `http://mentor-program.co/mtr04group4/saffran/week12-comment-board/api_comments.php?site_key=${siteKey}`;
     if (before) {
       url += `&before=${before}`;
     }
