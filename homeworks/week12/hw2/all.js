@@ -70,7 +70,7 @@ $(document).ready(() => {
   todos.on('click', '.btn-edit', e => {
     const content = $(e.target).parents('.card-body').find('.todo-content').text();
     isDone = $(e.target).parents('.todo').hasClass('finished');
-    $(e.target).parents('.todo').prop('outerHTML', editTodoTemplate.replace('{content}', content));
+    $(e.target).parents('.todo').prop('outerHTML', editTodoTemplate.replace('{content}', escape(content)));
   });
 
   todos.on('keydown', '.input-edit-todo', e => {
@@ -87,7 +87,7 @@ $(document).ready(() => {
       } else {
         $(e.target).parent('.edit-todo').prop('outerHTML', todoTemplate
           .replace(/{id}/g, todoId)
-          .replace('{todo-content}', newValue)
+          .replace('{todo-content}', escape(newValue))
         );
       }
     }
@@ -180,6 +180,7 @@ $(document).ready(() => {
     $.ajax({
       type: 'POST',
       url: 'http://localhost:8080/saffran/week12-todoList/api_save_todos.php',
+      // url: 'http://mentor-program.co/mtr04group4/saffran/week12-todo-list/api_save_todos.php',
       data: {
         todos: JSON.stringify(dataArr) // 把陣列先變成 JSON 字串
       }
@@ -200,6 +201,7 @@ $(document).ready(() => {
     // 發送一個 GET request 去後端拿 todos 的資料，並且用 url (query string) 的方式帶上專屬的 id 送到 api 去
     $.ajax({
       url: `http://localhost:8080/saffran/week12-todoList/api_get_todos.php?id=` + todosId
+      // url: `http://mentor-program.co/mtr04group4/saffran/week12-todo-list/api_get_todos.php?id=` + todosId
     }).done(function (res) {
       const data = JSON.parse(res.todos.todo_data); // 把 JSON 字串變回陣列
       restoreTodos(data);
